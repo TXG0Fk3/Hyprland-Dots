@@ -1,151 +1,46 @@
-@define-color text {
-    {
-    foreground
-  }
-}
-
-;
-
-@define-color background rgba({
-    {
-    background | rgb
-  }
-}
-
-, 0.25);
-
-@define-color background-alt {
-    {
-    background
-  }
-}
-
-;
-
-@define-color cursor {
-    {
-    cursor
-  }
-}
-
-;
-
-@define-color hovered {
-    {
-    color12
-  }
-}
-
-;
-
-@define-color button-background {
-    {
-    color6
-  }
-}
-
-;
-
-@define-color button-active {
-    {
-    color2
-  }
-}
-
-;
-
-@define-color border {
-    {
-    color9
-  }
-}
-
-;
-
-@define-color urgent {
-    {
-    color15
-  }
-}
-
-;
-
-@define-color noti-border-color @color12;
-@define-color noti-bg rgba(0, 0, 0, 0.8);
-@define-color noti-bg-alt @background-alt;
-@define-color noti-bg-hover @background;
-@define-color text-color @foreground;
-
 * {
   font-family: "JetBrains Mono Nerd Font";
   font-weight: bold;
 }
 
-.control-center .notification-row:focus,
-.control-center .notification-row:hover {
-  opacity: 1;
-  background: #1e1e2e;
-  border-radius: 10px
-}
-
-.notification-row {
-  outline: none;
-  margin: 0px;
-}
-
-.notification {
-  border-radius: 10px;
-}
-
 .notification-content {
-  /*color: @text-color;*/
   background: #1e1e2e;
-  padding: 3px 10px 3px 6px;
-  border-radius: 10px;
-  border: 1px solid @noti-border-color;
   margin: 0px;
 }
 
 .notification-default-action {
   margin: 0;
   padding: 0;
-  border-radius: 10px;
+}
+
+.notification-group {
+  background-color: transparent;
 }
 
 .close-button {
-  background: #f7768e;
+  background: #f38ba8;
   color: #1e1e2e;
   text-shadow: none;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 5px;
   margin-right: 5px;
 }
 
-.close-button:hover {
-  box-shadow: none;
-  background: #f7768e;
-  transition: all .15s ease-in-out;
-  border: none
-}
-
-
 .notification-action {
-  border: 1px solid @noti-border-color;
+  border: 1px solid #74c7ec;
   border-top: none;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 
 .notification-default-action:hover,
 .notification-action:hover {
-  color: @text-color;
-  background: @noti-bg
+  color: #74c7ec;
 }
 
-
 .notification-default-action {
-  border-radius: 10px;
+  border-radius: 8px;
   margin: 5px;
 }
 
@@ -156,12 +51,11 @@
 
 .notification-action:first-child {
   border-bottom-left-radius: 10px;
-  background: #1e1e2e
 }
 
 .notification-action:last-child {
   border-bottom-right-radius: 10px;
-  background: @noti-bg-alt
+  background: #74c7ec;
 }
 
 .inline-reply {
@@ -170,42 +64,42 @@
 
 .inline-reply-entry {
   background: #1e1e2e;
-  color: @text-color;
-  caret-color: @text-color;
-  border: 1px solid @noti-border-color;
-  border-radius: 10px
+  color: #74c7ec;
+  caret-color: #74c7ec;
+  border: 1px solid #74c7ec;
+  border-radius: 8px;
 }
 
 .inline-reply-button {
   font-size: 0.5rem;
   margin-left: 4px;
   background: #1e1e2e;
-  border: 1px solid @noti-border-color;
-  border-radius: 10px;
-  color: @text-color
+  border: 1px solid #74c7ec;
+  border-radius: 8px;
+  color: #74c7ec
 }
 
 .inline-reply-button:disabled {
   background: initial;
-  color: @text-color;
+  color: #74c7ec;
   border: 1px solid transparent
 }
 
 .inline-reply-button:hover {
-  background: @noti-bg-hover
+  background: transparent;
 }
 
 .body-image {
   margin-top: 6px;
-  color: @text-color;
-  border-radius: 10px
+  color: #74c7ec;
+  border-radius: 8px;
 }
 
 .summary {
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #74c7ec;
   text-shadow: none
 }
 
@@ -213,7 +107,7 @@
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #74c7ec;
   text-shadow: none;
   margin-right: 18px
 }
@@ -222,19 +116,19 @@
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: @text-color;
+  color: #74c7ec;
   text-shadow: none
 }
 
 .control-center {
   background: #1e1e2e;
-  border: 1px solid @noti-border-color;
-  color: @text-color;
-  border-radius: 10px;
+  border: 2px solid #74c7ec;
+  color: #74c7ec;
+  border-radius: 8px;
 }
 
 .control-center-list {
-  background: transparent
+  background: transparent;
 }
 
 .control-center-list-placeholder {
@@ -245,118 +139,93 @@
   background: transparent;
 }
 
-.blank-window {
-  background: alpha(black, 0.1)
-}
-
 .widget-title {
-  color: @text-color;
-  background: @noti-bg-alt;
+  color: #74c7ec;
+  background: transparent;
   padding: 3px 6px;
   margin: 5px;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .widget-title>button {
   font-size: 0.75rem;
-  color: @text-color;
-  border-radius: 10px;
+  color: #f38ba8;
+  border-radius: 8px;
   background: transparent;
-  border: 0.5px solid @noti-border-color;
+  border: 1px solid #f38ba8;
 }
 
 /* clear button */
 .widget-title>button:hover {
-  background: @text-color;
-  color: red;
+  background: #f38ba8;
+  color: #1e1e2e;
 }
 
 .widget-dnd {
-  background: @noti-bg-alt;
+  background: transparent;
   padding: 3px 6px;
   margin: 5px;
-  border-radius: 10px;
   font-size: 1rem;
-  color: @noti-border-color;
+  color: #f38ba8;
 }
 
 .widget-dnd>switch {
-  border-radius: 10px;
-  border: 1px solid #7aa2f7;
-  background: @noti-border-color;
+  border-radius: 16px;
+  border: 1px solid #f38ba8;
+  background: #f38ba8;
 }
 
 .widget-dnd>switch:checked {
-  background: #f7768e;
-  border: 1px solid #f7768e;
+  background: #74c7ec;
+  border: 1px solid #74c7ec;
 }
 
 .widget-dnd>switch slider {
   background: #1e1e2e;
-  border-radius: 10px
+  border-color: #f38ba8;
+  border-width: 1px;
+  border-radius: 8px
 }
 
 .widget-dnd>switch:checked slider {
   background: #1e1e2e;
-  border-radius: 10px
+  border-color: #74c7ec;
+  border-width: 1px;
+  border-radius: 8px
 }
 
 .widget-label {
   margin: 5px;
+  color: #74c7ec;
 }
 
 .widget-label>label {
   font-size: 1rem;
-  color: @text-color;
-}
-
-.widget-mpris {
-  color: @text-color;
-  background: @noti-bg;
-  padding: 3px 6px;
-  margin: 5px;
-  border-radius: 10px;
-}
-
-.widget-mpris>box>button {
-  border-radius: 10px;
-}
-
-.widget-mpris-player {
-  padding: 3px 6px;
-  margin: 5px;
-}
-
-.widget-mpris-title {
-  font-weight: 100;
-  font-size: 1rem
-}
-
-.widget-mpris-subtitle {
-  font-size: 0.75rem
+  color: #74c7ec;
 }
 
 .widget-buttons-grid {
   font-size: large;
-  color: @noti-border-color;
-  padding: 2px;
+  color: #74c7ec;
+  padding: 2px 2px 2px 16px;
   margin: 5px;
-  border-radius: 10px;
-  background: @noti-bg-alt;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
+  background: #74c7ec;
+  color: #1e1e2e;
   margin: 1px;
-  background: #1e1e2e;
-  border-radius: 10px;
-  color: @text-color
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
 /* individual buttons */
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @text-color;
-  color: @noti-bg-hover
+  background: #cdd6f4;
+  color: #1e1e2e;
 }
 
 .widget-menubar>box>.menu-button-bar>button {
@@ -370,50 +239,59 @@
 }
 
 .widget-volume {
-  background: @noti-bg-alt;
+  background: #1e1e2e;
   padding: 2px;
   margin: 10px 10px 5px 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: x-large;
-  color: @text-color
+  color: #74c7ec
+}
+
+.widget-volume label {
+  font-size: 1.5rem;
+  color: #74c7ec;
+  margin-right: 8px;
 }
 
 .widget-volume>box>button {
-  background: @noti-border-color;
-  border: none
+  background: #74c7ec;
+  border: none;
 }
 
 .per-app-volume {
   background-color: #1e1e2e;
   padding: 4px 8px 8px;
   margin: 0 8px 8px;
-  border-radius: 10px;
-  color: @text-color
+  border-radius: 8px;
+  color: #74c7ec
 }
 
 .widget-backlight {
-  background: @noti-bg-alt;
+  background: #1e1e2e;
   padding: 5px;
   margin: 10px 10px 5px 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: x-large;
-  color: @text-color
+  color: #74c7ec
 }
 
 .low {
-  background: @text-color;
-  padding: 0px;
-  border-radius: 10px;
+  border-color: #74c7ec;
+  background-color: #1e1e2e;
+  border-width: 2px;
+  border-radius: 8px;
 }
 
 .normal {
-  background: @text-color;
-  padding: 0px;
-  border-radius: 10px;
+  border-color: #74c7ec;
+  background-color: #1e1e2e;
+  border-width: 2px;
+  border-radius: 8px;
 }
 
 .critical {
-  background: red;
-  padding: 0px;
-  border-radius: 10px;
+  border-color: #f38ba8;
+  background-color: #1e1e2e;
+  border-width: 2px;
+  border-radius: 8px;
 }
