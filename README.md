@@ -4,7 +4,7 @@
 Instalação:
 - Conteúdo do HyprLand:
     ```bash
-    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git
+    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git swww
     ```
 
 - Dependências:
