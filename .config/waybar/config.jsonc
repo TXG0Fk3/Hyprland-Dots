@@ -1,0 +1,375 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": 16,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "group/networkmod"],
+  "modules-center": ["group/windowmod"],
+  "modules-right": ["tray", "group/mediamod", "group/audiomod", "group/clockmod", "custom/swaync"],
+
+  ///////////////
+  /// MODULES ///
+  ///////////////
+
+  // Launcher //
+  "custom/launcher":
+  {
+    "format": "<span font='18'>󰣇</span>",
+    "on-click": "rofi -show drun",
+    "on-click-right": "rofi -show run" 
+  },
+
+
+  // Workspaces //
+  "hyprland/workspaces":
+  {
+    "active-only": false,
+    "all-outputs": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+
+    "persistent-workspaces":
+    {
+      "*": 7
+    },
+
+    "format": "{icon}",
+    "on-click": "activate",
+
+    "format-icons":
+    {
+      "active": "󰮯",
+      "empty": "<span font='6'></span>",
+      "default": "󰊠",
+      "sort-by-number": true
+    }
+  },
+
+
+  // Network //
+  "network":
+  {
+    "format": "{ifname}",
+    "format-wifi": "<span font='14'>{icon}</span>",
+    "format-ethernet": "span font='14'>󰈀<</span>",
+    "format-disconnected": "<span font='14'>󰣼</span>",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    "format-linked": "󰣼 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰈀",
+    "tooltip-format-disconnected": "󰣼 Disconnected",
+    "max-length": 30,
+    "format-icons": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"],
+    "on-click": "hyprctl dispatch exec '[float; size 512 512; center] kitty nmtui'"
+  },
+  "network#speed": 
+  {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-ethernet": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-disconnected": " 0.00B/s  0.00B/s",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "min-length": 20,
+    "max-length": 24,
+    "on-click": "hyprctl dispatch exec '[float; size 512 512; center] kitty nmtui'"
+  },
+  "group/networkmod":
+  {
+    "orientation": "horizontal",
+    "modules": 
+    [
+      "network",
+      "network#speed"
+    ]
+  },
+
+
+  // Active Windows //
+  "hyprland/window#icon": 
+  {
+    "format": "",
+    "icon": true,
+    "icon-size": 20,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)"
+  },
+  "hyprland/window#title": 
+  {
+    "format": "{}",
+    "max-length": 25,
+    "separate-outputs": true,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)"
+  },
+  "group/windowmod":
+  {
+    "orientation": "horizontal",
+    "modules":
+    [
+      "hyprland/window#icon",
+      "hyprland/window#title"
+    ]
+  },
+
+
+
+  // Tray //
+  "tray": 
+  {
+		"icon-size": 18,
+		"spacing": 8
+	},
+
+
+  // Media Player //
+  "mpris#icon": {
+    "interval": 0.5,
+    "format": "<span font='14'>{player_icon}</span>",
+    "format-paused": "<span font='14'>{status_icon}</span>",
+    "format-stopped": "",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "tooltip": true,
+    "tooltip-format": "{status_icon}  {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+    "player-icons": {
+      "chromium": "",
+      "default": "",
+      "firefox": "",
+      "mopidy": "",
+      "mpv": "󰐹",
+      "spotify": "",
+      "vlc": "󰕼"
+    },
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    }
+  },
+  "mpris#title": {
+    "interval": 0.5,
+    "format": "{title} - {artist}",
+    "format-stopped": "",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "tooltip": true,
+    "tooltip-format": "{status_icon}  {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    },
+    "max-length": 20
+  },
+  "group/mediamod":
+  {
+    "orientation": "horizontal",
+    "modules":
+    [
+      "mpris#icon",
+      "mpris#title"
+    ]
+  },
+
+
+
+  // Audio //
+  "pulseaudio#icon": 
+  {
+		"format": "<span font='14'>{icon}</span>",
+    "format-muted": "",
+
+		"format-icons": 
+    {
+			"default": ["", "", ""]
+		},
+
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+		"on-click-right": "pavucontrol"
+  },
+  "pulseaudio#volume": 
+  {
+		"format": "{volume}%",
+    "format-muted": "Muted",
+
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+		"on-click-right": "pavucontrol"
+  },
+  "group/audiomod": 
+  {
+    "orientation": "horizontal",
+    "modules":
+    [
+      "pulseaudio#icon",
+      "pulseaudio#volume"
+    ]
+  },
+
+
+	"clock#icon": 
+  {
+    "format": "<span font='14'>󰸗</span>",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": 
+    {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format":
+      {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":
+    {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "clock#date": 
+  {
+    "format": "{:%a %b %d %R}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": 
+    {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format":
+      {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":
+    {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "group/clockmod": 
+  {
+    "orientation": "horizontal",
+    "modules":
+    [
+      "clock#icon",
+      "clock#date"
+    ]
+  },
+
+
+
+  // Notifications //
+  "custom/swaync": {
+	"tooltip": true,
+	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+	"format": "{icon}",
+	"format-icons": {
+		"notification": "<span foreground=#f38ba8><sup></sup></span>",
+		"none": "",
+		"dnd-notification": "<span foreground=#f38ba8><sup></sup></span>",
+		"dnd-none": "",
+		"inhibited-notification": "<span foreground=#f38ba8><sup></sup></span>",
+		"inhibited-none": "",
+		"dnd-inhibited-notification": "<span foreground=#f38ba8><sup></sup></span>",
+		"dnd-inhibited-none": ""
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+	"escape": true
+},
+
+
+
+	"battery": 
+  {
+    "states": 
+    {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+
+    "format":"{icon}  {capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+	},
+
+
+
+  "memory": 
+  {
+    "format": "󰍛 {}%",
+    "format-alt": "󰍛 {used}/{total} GiB",
+    "interval": 5
+  },
+
+
+
+  "cpu": 
+  {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 5
+  },
+
+
+
+  "disk": 
+  {
+    "format": "󰋊 {}%",
+    "format-alt": "󰋊 {used}/{total} GiB",
+    "interval": 5,
+    "path": "/mnt/Datos"
+  },
+
+
+
+  "custom/hyprpicker":
+  {
+    "format": "󰈋",
+    "on-click": "hyprpicker -a -f hex",
+    "on-click-right": "hyprpicker -a -f rgb"
+  }
+
+
+
+}
