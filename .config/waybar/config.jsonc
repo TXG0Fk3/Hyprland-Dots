@@ -296,14 +296,14 @@
 	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
 	"format": "{icon}",
 	"format-icons": {
-		"notification": "<span foreground=#f38ba8><sup></sup></span>",
-		"none": "",
-		"dnd-notification": "<span foreground=#f38ba8><sup></sup></span>",
-		"dnd-none": "",
-		"inhibited-notification": "<span foreground=#f38ba8><sup></sup></span>",
-		"inhibited-none": "",
-		"dnd-inhibited-notification": "<span foreground=#f38ba8><sup></sup></span>",
-		"dnd-inhibited-none": ""
+		"notification": "<span font='14'>󰂚</span><span foreground=#f38ba8><sup></sup></span>",
+		"none": "<span font='14'>󰂚</span>",
+		"dnd-notification": "<span font='14'>󰂛</span><span foreground=#f38ba8><sup></sup></span>",
+		"dnd-none": "<span font='14'>󰂛</span>",
+		"inhibited-notification": "<span font='14'>󰂚</span><span foreground=#f38ba8><sup></sup></span>",
+		"inhibited-none": "<span font='14'>󰂚</span>",
+		"dnd-inhibited-notification": "<span font='14'>󰂛</span><span foreground=#f38ba8><sup></sup></span>",
+		"dnd-inhibited-none": "<span font='14'>󰂛</span>"
 	},
 	"return-type": "json",
 	"exec-if": "which swaync-client",
