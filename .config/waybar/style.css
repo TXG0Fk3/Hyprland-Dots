@@ -18,7 +18,8 @@ window#waybar {
 #mediamod,
 #audiomod,
 #clockmod,
-#battery {
+#battery,
+#custom-swaync {
     background-color: #1e1e2e;
     margin: 8px 8px 8px 0px;
     border-radius: 8px;
@@ -199,7 +200,12 @@ window#waybar.empty #window.title {
 
 
 /* NOTIFICATIONS */
+#custom-swaync {
+    color: #1e1e2e;
+    background-color: #74c7ec;
 
+    padding: 0px 14px 0px 11px;
+}
 
 #custom-power {
     color: #24283b;
