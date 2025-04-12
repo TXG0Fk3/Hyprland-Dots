@@ -4,11 +4,12 @@
 }
 
 
+
 /* CONTROL CENTER */
 .control-center {
   background: #1e1e2e;
   border: 2px solid #74c7ec;
-  color: #74c7ec;
+  color: #cdd6f4;
   border-radius: 8px;
 }
 
@@ -94,7 +95,7 @@
 
 .notification-default-action:not(:only-child) {
   border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px
+  border-bottom-right-radius: 7px;
 }
 
 .notification-action:first-child {
@@ -107,7 +108,7 @@
 }
 
 .inline-reply {
-  margin-top: 8px
+  margin-top: 8px;
 }
 
 .inline-reply-entry {
@@ -124,13 +125,13 @@
   background: #1e1e2e;
   border: 1px solid #74c7ec;
   border-radius: 8px;
-  color: #74c7ec
+  color: #74c7ec;
 }
 
 .inline-reply-button:disabled {
   background: initial;
-  color: #74c7ec;
-  border: 1px solid transparent
+  color: #447388;
+  border: 1px solid transparent;
 }
 
 .inline-reply-button:hover {
@@ -139,7 +140,7 @@
 
 .body-image {
   margin-top: 6px;
-  color: #74c7ec;
+  color: #cdd6f4;
   border-radius: 8px;
 }
 
@@ -148,24 +149,24 @@
   font-weight: bold;
   background: transparent;
   color: #74c7ec;
-  text-shadow: none
+  text-shadow: none;
 }
 
 .time {
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: #74c7ec;
+  color: #cdd6f4;
   text-shadow: none;
-  margin-right: 18px
+  margin-right: 18px;
 }
 
 .body {
   font-size: 1rem;
   font-weight: bold;
   background: transparent;
-  color: #74c7ec;
-  text-shadow: none
+  color: #cdd6f4;
+  text-shadow: none;
 }
 
 .low {
@@ -197,7 +198,10 @@
   padding: 3px 6px;
   margin: 5px;
   font-size: 1rem;
-  color: #f38ba8;
+}
+
+.widget-dnd>label {
+  color: #74c7ec;
 }
 
 .widget-dnd>switch {
@@ -250,14 +254,16 @@
   color: #1e1e2e;
 }
 
-.widget-menubar>box>.menu-button-bar>button {
-  border: none;
-  background: transparent
+
+
+/* MPRIS */
+.widget-mpris-title {
+  color: #74c7ec;
+
 }
 
-.topbar-buttons>button {
-  border: none;
-  background: transparent
+.widget-mpris-subtitle {
+  color: #cdd6f4;
 }
 
 
@@ -273,22 +279,22 @@
 }
 
 .widget-volume label {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #74c7ec;
-  margin-right: 8px;
+  margin-right: 16px;
 }
 
 .widget-volume>box>button {
-  background: #74c7ec;
-  border: none;
+  background: #1e1e2e;
+  color: #74c7ec;
+  border: 1px solid #74c7ec;
+  border-radius: 24px;
+  transition: all 0.25s ease;
 }
 
-.per-app-volume {
-  background-color: #1e1e2e;
-  padding: 4px 8px 8px;
-  margin: 0 8px 8px;
-  border-radius: 8px;
-  color: #74c7ec
+.widget-volume>box>button:hover {
+  background: #74c7ec;
+  color: #1e1e2e;
 }
 
 
