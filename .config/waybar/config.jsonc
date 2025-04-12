@@ -369,7 +369,4 @@
     "on-click": "hyprpicker -a -f hex",
     "on-click-right": "hyprpicker -a -f rgb"
   }
-
-
-
 }
