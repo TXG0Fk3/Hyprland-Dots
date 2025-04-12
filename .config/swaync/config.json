@@ -15,7 +15,7 @@
     "notification-icon-size": 32,
     "notification-body-image-height": 120,
     "notification-body-image-width": 220,
-    "notification-window-width": 330,
+    "notification-window-width": 400,
     "timeout": 6,
     "timeout-low": 3,
     "timeout-critical": 0,
@@ -61,7 +61,10 @@
         },
         "volume":
         {
-            "label": ""
+            "label": "",
+            "icon-size": 32,
+            "show-per-app": true,
+            "show-per-app-icon": true
         },
         "backlight":
         {
