@@ -106,7 +106,7 @@ window#waybar.empty #window.title {
 
 #window.icon {
     color: #1e1e2e;
-    padding: 0px 8px 0px 4px;
+    padding: 0px 6px 0px 2px;
     margin-right: 0px;
 }
 
