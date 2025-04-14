@@ -5,9 +5,9 @@
 
 <div align="center">
 
-![GitHub Repo stars](https://img.shields.io/github/stars/TXG0Fk3/Windows-Dots?style=for-the-badge&color=ff94bc)
-![GitHub last commit](https://img.shields.io/github/last-commit/TXG0Fk3/Windows-Dots?style=for-the-badge&color=ff94bc)
-![GitHub repo size](https://img.shields.io/github/repo-size/TXG0Fk3/Windows-Dots?style=for-the-badge&color=ff94bc)
+![GitHub Repo stars](https://img.shields.io/github/stars/TXG0Fk3/Hyprland-Dots?style=for-the-badge&color=ff94bc)
+![GitHub last commit](https://img.shields.io/github/last-commit/TXG0Fk3/Hyprland-Dots?style=for-the-badge&color=ff94bc)
+![GitHub repo size](https://img.shields.io/github/repo-size/TXG0Fk3/Hyprland-Dots?style=for-the-badge&color=ff94bc)
 <br/>
 </div>
 
