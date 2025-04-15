@@ -37,7 +37,7 @@
 
 - Other:
     ```bash
-    yay -S zen-browser-bin superfile-bin btop-git equibop-bin localsend-bin
+    yay -S zen-browser-bin superfile-bin btop-git equibop-bin localsend-bin swappy mpv
     ```
 
 - Copy dotfiles to your home.
