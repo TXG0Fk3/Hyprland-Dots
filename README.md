@@ -27,7 +27,7 @@
 
 - Hyprland:
     ```bash
-    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git swww catppuccin-cursors-mocha
+    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git hyprpicker-git swww catppuccin-cursors-mocha
     ```
 
 - Deps:
