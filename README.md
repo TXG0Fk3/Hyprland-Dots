@@ -32,7 +32,7 @@
 
 - Deps:
     ```bash
-    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol papirus-icon-theme nwg-look
+    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol papirus-icon-theme nwg-look
     ```
 
 - Other:
