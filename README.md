@@ -27,12 +27,12 @@
 
 - Hyprland:
     ```bash
-    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git hyprpicker-git hyprlock-git swww catppuccin-cursors-mocha
+    yay -S hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git hyprpicker-git hyprlock-git swww catppuccin-cursors-mocha papirus-icon-theme
     ```
 
 - Deps:
     ```bash
-    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol papirus-icon-theme nwg-look
+    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol nwg-look
     ```
 
 - Other:
