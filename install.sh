@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Ensure privileges
+#---> Ensure privileges <---#
 if [ "$EUID" -ne 0 ]; then
   exec sudo "$0" "$@"
 fi
 
-# Check if YAY is available and install it if not
+#---> Check if YAY is available and install it if not <---# 
 if ! command -v yay &> /dev/null; then
   echo "yay not found. Installing..."
 
