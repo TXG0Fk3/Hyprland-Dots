@@ -33,7 +33,7 @@
 
 - Deps:
     ```bash
-    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol nwg-look
+    yay -S xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol qt5ct qt6ct nwg-look
     ```
 
 - Other:
