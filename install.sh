@@ -24,3 +24,12 @@ if ! command -v yay &> /dev/null; then
 else
   echo "yay it's already installed."
 fi
+
+#---> Install packages <---#
+Hyprland=(hyprland-git waybar-git rofi-wayland swaync-git hyprshot-git hyprpicker-git hyprlock-git swww catppuccin-cursors-mocha papirus-icon-theme)
+Deps=(xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk zenity polkit-gnome ttf-jetbrains-mono ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji pavucontrol qt5ct qt6ct nwg-look)
+Other=(superfile-bin btop-git kitty loupe mpv zsh)
+
+echo "Installing Packages..."
+
+yay -S --noconfirm --needed --removemake $Hyprland $Deps $Other
