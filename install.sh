@@ -33,3 +33,9 @@ Other=(superfile-bin btop-git kitty loupe mpv zsh)
 echo "Installing Packages..."
 
 yay -S --noconfirm --needed --removemake $Hyprland $Deps $Other
+
+#---> Copy DotFiles <---#
+REPO_DIR="$(dirname "$(readlink -f "$0")")"
+
+cp -aRf "$REPO_DIR/.config" ~/
+cp -aRf "$REPO_DIR/.local" ~/
