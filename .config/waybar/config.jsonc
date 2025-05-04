@@ -199,7 +199,7 @@
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
-		"on-click-right": "pavucontrol"
+		"on-click-right": "hyprctl dispatch exec '[float; size 800 512; center] pavucontrol'"
   },
   "pulseaudio#volume": 
   {
@@ -209,7 +209,7 @@
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
-		"on-click-right": "pavucontrol"
+		"on-click-right": "hyprctl dispatch exec '[float; size 800 512; center] pavucontrol'"
   },
   "group/audiomod": 
   {
